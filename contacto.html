@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contáctanos — i-Homotic</title>
+  <meta name="description" content="¿Listo para automatizar tu hogar? Cuéntanos sobre tu proyecto y Carlos te responde en menos de 24 horas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">i-Homotic</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="quiz.html" class="nav-link">¿Por dónde empiezo?</a></li>
+      <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
+      <li><a href="configurador.html" class="nav-link">Configurador</a></li>
+      <li><a href="contacto.html" class="nav-link">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573XXXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20domótica" class="nav-cta" target="_blank" rel="noopener">Hablar con Carlos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="contacto-hero">
+    <h1>📬 Hablemos de tu proyecto</h1>
+    <p>Cuéntanos sobre tu hogar y Carlos te responde en menos de 24 horas.</p>
+  </header>
+
+  <!-- FORMULARIO -->
+  <main class="contacto-wrapper">
+
+    <div class="contacto-form-card">
+      <h2>¿Quieres saber cómo automatizar tu hogar?</h2>
+      <p class="form-intro">Completa el formulario y te enviamos una propuesta personalizada sin compromiso.</p>
+
+      <!-- Formulario -->
+      <form id="contacto-form" novalidate>
+
+        <div class="campo-grupo">
+          <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="campo-input"
+            placeholder="Ej: María González"
+            required
+            aria-required="true"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="email">Correo electrónico <span class="req" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="campo-input"
+            placeholder="Ej: maria@correo.com"
+            required
+            aria-required="true"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="telefono">Teléfono / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            class="campo-input"
+            placeholder="Ej: 311 234 5678"
+            required
+            aria-required="true"
+            autocomplete="tel"
+          />
+        </div>
+
+        <div class="campo-grupo">
+          <label for="ciudad">Ciudad</label>
+          <input
+            type="text"
+            id="ciudad"
+            name="ciudad"
+            class="campo-input"
+            placeholder="Ej: Medellín, Bogotá..."
+            autocomplete="address-level2"
+          />
+        </div>
+
+        <div class="campo-grupo">
+          <label id="interes-label">¿Qué te interesa? <span class="req" aria-hidden="true">*</span></label>
+          <div class="interes-grupo" role="group" aria-labelledby="interes-label">
+            <button type="button" class="interes-btn" data-valor="Seguridad" aria-pressed="false">🔒 Seguridad</button>
+            <button type="button" class="interes-btn" data-valor="Iluminación" aria-pressed="false">💡 Iluminación</button>
+            <button type="button" class="interes-btn" data-valor="Climatización" aria-pressed="false">🌡️ Climatización</button>
+            <button type="button" class="interes-btn" data-valor="Todo" aria-pressed="false">🎯 Todo</button>
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="mensaje">Mensaje (opcional)</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            class="campo-input"
+            placeholder="Cuéntanos sobre tu proyecto, tipo de vivienda, dudas específicas..."
+            maxlength="300"
+            rows="4"
+          ></textarea>
+          <p class="campo-contador" aria-live="polite" aria-atomic="true">
+            <span id="contador-mensaje">0 / 300 caracteres</span>
+          </p>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span class="btn-text">Enviar solicitud</span>
+          <span class="spinner" style="display:none;" aria-hidden="true"></span>
+        </button>
+
+        <!-- Error general -->
+        <div class="form-error" id="form-error-general" role="alert">
+          Hubo un problema al enviar tu solicitud. Intenta de nuevo o escríbenos directamente por WhatsApp.
+          <br /><br />
+          <a href="https://wa.me/573XXXXXXXXXX?text=Hola%20Carlos,%20quiero%20información%20sobre%20domótica" class="btn-whatsapp" target="_blank" rel="noopener" style="display:inline-flex;">
+            💬 Escribir por WhatsApp
+          </a>
+        </div>
+
+      </form>
+
+      <!-- Estado de éxito (oculto por defecto) -->
+      <div class="form-success" id="form-success" aria-live="polite">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h3>¡Mensaje enviado!</h3>
+        <p>Carlos se comunicará contigo en menos de 24 horas por WhatsApp o correo.</p>
+        <a href="#" class="btn-whatsapp" id="success-btn-wa" target="_blank" rel="noopener" style="display:inline-flex; justify-content:center;">
+          💬 Abrir WhatsApp ahora
+        </a>
+      </div>
+    </div>
+
+    <!-- Info de contacto -->
+    <div class="contacto-info">
+      <div class="info-item">
+        <div class="info-icon">⚡</div>
+        <strong>Respuesta en 24h</strong>
+        <span>Días hábiles, Colombia</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🏠</div>
+        <strong>Showroom</strong>
+        <span>Medellín, Colombia</span>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">💬</div>
+        <strong>WhatsApp directo</strong>
+        <span>+57 3XX XXX XXXX</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 i-Homotic · Medellín, Colombia · <a href="contacto.html">Contacto</a></p>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

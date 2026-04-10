@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Ahorro — i-Homotic</title>
+  <meta name="description" content="Descubre cuánto puedes ahorrar en energía con domótica. Calcula tu inversión y tiempo de retorno con datos reales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/calculadora.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">i-Homotic</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="quiz.html" class="nav-link">¿Por dónde empiezo?</a></li>
+      <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
+      <li><a href="configurador.html" class="nav-link">Configurador</a></li>
+      <li><a href="contacto.html" class="nav-link">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573XXXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20domótica" class="nav-cta" target="_blank" rel="noopener">Hablar con Carlos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="calc-hero">
+    <h1>💰 Calculadora de Ahorro</h1>
+    <p>¿Cuánto puedes ahorrar con domótica? Mueve los controles y ve los números en tiempo real.</p>
+  </header>
+
+  <!-- CALCULADORA -->
+  <main class="calc-wrapper">
+
+    <!-- Layout de sliders + resultados -->
+    <div class="calc-layout">
+
+      <!-- Panel de controles -->
+      <div class="calc-panel">
+        <h2>Configura tu hogar</h2>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Habitaciones</span>
+            <span class="slider-value" id="val-habitaciones">3</span>
+          </div>
+          <input
+            class="slider-input"
+            type="range"
+            id="slider-habitaciones"
+            min="1" max="6" value="3" step="1"
+            aria-label="Número de habitaciones"
+          />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Consumo actual (kWh/mes)</span>
+            <span class="slider-value" id="val-consumo">280 kWh</span>
+          </div>
+          <input
+            class="slider-input"
+            type="range"
+            id="slider-consumo"
+            min="100" max="600" value="280" step="10"
+            aria-label="Consumo eléctrico mensual en kWh"
+          />
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span>Horas de iluminación al día</span>
+            <span class="slider-value" id="val-horas">6 h</span>
+          </div>
+          <input
+            class="slider-input"
+            type="range"
+            id="slider-horas"
+            min="2" max="16" value="6" step="1"
+            aria-label="Horas de iluminación al día"
+          />
+        </div>
+      </div>
+
+      <!-- Panel de resultados -->
+      <div class="calc-results">
+        <h2>Tu estimado de ahorro</h2>
+
+        <div class="result-highlight">
+          <p class="result-label">Ahorro mensual estimado</p>
+          <p class="result-value" id="res-ahorro-mensual">$100.800/mes</p>
+          <p class="result-sub">vs. costo sin domótica: <span id="res-costo-sin">$336.000/mes</span></p>
+        </div>
+
+        <div class="result-highlight" style="margin-bottom: 1rem;">
+          <p class="result-label">Inversión estimada</p>
+          <p class="result-value" id="res-inversion" style="font-size:1.4rem;">$2.550.000</p>
+        </div>
+
+        <div class="result-roi">
+          <span class="roi-icon">⏱️</span>
+          <div class="roi-text">
+            <strong id="res-roi">25 meses</strong>
+            <span>para recuperar la inversión</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla comparativa -->
+    <div class="calc-table-section">
+      <h2>Comparativo a futuro</h2>
+      <table class="comparativa-table" aria-label="Comparativa de ahorro sin y con domótica">
+        <thead>
+          <tr>
+            <th>Período</th>
+            <th class="col-sin">Sin domótica</th>
+            <th class="col-con">Con domótica</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 año</td>
+            <td class="col-sin" id="tabla-sin-1">—</td>
+            <td class="col-con" id="tabla-con-1">—</td>
+          </tr>
+          <tr>
+            <td>3 años</td>
+            <td class="col-sin" id="tabla-sin-3">—</td>
+            <td class="col-con" id="tabla-con-3">—</td>
+          </tr>
+          <tr>
+            <td>5 años</td>
+            <td class="col-sin" id="tabla-sin-5">—</td>
+            <td class="col-con" id="tabla-con-5">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.78rem; color:#aaa; margin-top:0.75rem;">
+        * "Sin domótica" muestra el costo de energía acumulado. "Con domótica" muestra el ahorro acumulado generado.
+      </p>
+    </div>
+
+    <!-- Gráfica SVG -->
+    <div class="calc-chart-section">
+      <h2>Ahorro acumulado vs. costo energético</h2>
+      <div class="chart-container">
+        <svg id="chart-svg" class="chart-svg" role="img" aria-label="Gráfica de barras comparativa de ahorro"></svg>
+      </div>
+      <div class="chart-legend">
+        <span class="legend-item">
+          <span class="legend-color" style="background-color:#bbb;"></span>
+          Sin domótica
+        </span>
+        <span class="legend-item">
+          <span class="legend-color" style="background-color:#2D6A2E;"></span>
+          Con domótica (ahorro)
+        </span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="calc-cta">
+      <strong>¿Estos números te convencen?</strong>
+      <p>Cuéntale a Carlos tus datos y recibe una propuesta adaptada a tu hogar real.</p>
+      <a href="#" class="btn-whatsapp" id="calc-btn-wa" target="_blank" rel="noopener">
+        💬 Hablar con Carlos con mis datos
+      </a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 i-Homotic · Medellín, Colombia · <a href="contacto.html">Contacto</a></p>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/calculadora.js"></script>
+</body>
+</html>

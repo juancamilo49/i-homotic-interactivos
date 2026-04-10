@@ -1,0 +1,284 @@
+/* =============================================
+   RESET Y BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--colorletraverde);
+  background-color: var(--blancoprincipal2);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-main);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: var(--font-main);
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+#main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--colorletraverde);
+  padding: 0 2.5rem;
+  height: 68px;
+  box-shadow: var(--shadow-md);
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--blancoprincipal2);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.nav-logo:hover {
+  color: var(--blancoprincipal1);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.nav-links li a {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover {
+  color: var(--blancoprincipal1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-links li a.active {
+  background-color: var(--verdeclaro);
+  color: var(--blancoprincipal1);
+}
+
+.nav-cta {
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: var(--naranja);
+  color: var(--blancoprincipal1);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.2rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-cta:hover {
+  background-color: var(--naranjahover);
+  transform: translateY(-2px);
+}
+
+.nav-hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--blancoprincipal2);
+  padding: 0.25rem 0.5rem;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* =============================================
+   NAVBAR MOBILE
+   ============================================= */
+@media (max-width: 768px) {
+  #main-nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.85rem 1.25rem;
+    gap: 0;
+  }
+
+  .nav-logo {
+    flex: 1;
+  }
+
+  .nav-hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0.5rem 0 0.75rem;
+    gap: 0.1rem;
+    order: 3;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .nav-cta {
+    order: 2;
+    margin-left: auto;
+    font-size: 0.82rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  #main-nav.nav-open .nav-links {
+    display: flex;
+  }
+}
+
+/* =============================================
+   UTILIDADES GENERALES
+   ============================================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--colorletraverde);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--colorletraverdeclaro);
+  margin-bottom: 2.5rem;
+}
+
+/* Botones reutilizables */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--naranja);
+  color: var(--blancoprincipal1);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--naranjahover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--whatsapp);
+  color: var(--blancoprincipal1);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--whatsapphover);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--verdeclaro);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 15px;
+  border: 1.5px solid var(--verdeclaro);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--verdeclaro);
+  color: var(--blancoprincipal1);
+}
+
+/* Footer simple */
+.site-footer {
+  background-color: var(--colorletraverde);
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.site-footer a:hover {
+  color: var(--blancoprincipal1);
+}

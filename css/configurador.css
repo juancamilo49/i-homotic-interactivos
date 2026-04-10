@@ -1,0 +1,252 @@
+/* =============================================
+   CONFIGURADOR MODULAR — Arma tu Solución
+   ============================================= */
+
+.config-hero {
+  background: linear-gradient(135deg, var(--colorletraverde) 0%, var(--verde) 100%);
+  color: var(--blancoprincipal1);
+  padding: 3.5rem 1.5rem 2.5rem;
+  text-align: center;
+}
+
+.config-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.config-hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.config-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* Instrucciones */
+.config-instruccion {
+  font-size: 1rem;
+  color: var(--colorletraverdeclaro);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Grid de módulos */
+.modulos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.modulo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1.25rem 1.1rem;
+  background-color: var(--blancoprincipal1);
+  border: 1.5px solid #dde8d5;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+}
+
+.modulo-card:hover {
+  border-color: var(--verdeclaro);
+  background-color: var(--colorfondoverdeclaro);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-sm);
+}
+
+.modulo-card.selected {
+  border-color: var(--colorletraverde);
+  background-color: var(--colorletraverde);
+  color: var(--blancoprincipal1);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.modulo-card.selected .modulo-precio {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.modulo-check {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--naranja);
+  color: var(--blancoprincipal1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modulo-card.selected .modulo-check {
+  display: flex;
+}
+
+.modulo-icono {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.modulo-nombre {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.modulo-precio {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--colorletraverdeclaro);
+}
+
+/* Panel de resumen */
+.config-resumen {
+  background: var(--blancoprincipal1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  border: 1.5px solid #dde8d5;
+}
+
+.config-resumen h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--colorletraverde);
+  margin-bottom: 1rem;
+}
+
+.modulos-seleccionados-lista {
+  min-height: 44px;
+}
+
+.modulos-seleccionados-lista .item-vacio {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.modulo-seleccionado-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.modulo-seleccionado-item:last-child {
+  border-bottom: none;
+}
+
+.modulo-sel-nombre {
+  font-weight: 600;
+  color: var(--colorletraverde);
+}
+
+.modulo-sel-precio {
+  font-weight: 600;
+  color: var(--colorletraverdeclaro);
+}
+
+/* Badge descuento */
+.descuento-badge {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--colorfondoverde);
+  border: 1.5px solid #b5d49e;
+  border-radius: var(--radius-full);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--verde);
+  margin-top: 1rem;
+  animation: fadeInBadge 0.3s ease;
+}
+
+.descuento-badge.visible {
+  display: flex;
+}
+
+@keyframes fadeInBadge {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Total */
+.config-total {
+  background: var(--naranja);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  color: var(--blancoprincipal1);
+  margin-bottom: 1.5rem;
+}
+
+.total-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.35rem;
+}
+
+.total-valor {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.total-original {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: line-through;
+  margin-bottom: 0.15rem;
+}
+
+.total-sin-seleccion {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+/* CTA */
+.config-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .modulos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .config-hero h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modulos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

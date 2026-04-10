@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Por dónde empiezo? — i-Homotic</title>
+  <meta name="description" content="Responde 4 preguntas y descubre qué solución de domótica es ideal para tu vivienda y presupuesto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">i-Homotic</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="quiz.html" class="nav-link">¿Por dónde empiezo?</a></li>
+      <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
+      <li><a href="configurador.html" class="nav-link">Configurador</a></li>
+      <li><a href="contacto.html" class="nav-link">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573XXXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20domótica" class="nav-cta" target="_blank" rel="noopener">Hablar con Carlos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="quiz-hero">
+    <h1>🧭 ¿Por dónde empiezo?</h1>
+    <p>4 preguntas. Resultado personalizado. Sin rodeos.</p>
+  </header>
+
+  <!-- QUIZ -->
+  <main class="quiz-wrapper">
+
+    <!-- Barra de progreso -->
+    <div class="quiz-progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <p class="quiz-progress-label">Pregunta 1 de 4</p>
+      <div class="quiz-progress">
+        <div class="quiz-progress-fill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Pasos (generados por quiz.js) -->
+    <div id="quiz-pasos" aria-live="polite"></div>
+
+    <!-- Pantalla de resultado -->
+    <div class="quiz-resultado" id="quiz-resultado" aria-live="polite">
+      <div class="resultado-card">
+        <p class="resultado-label">Tu punto de entrada ideal</p>
+        <h2 class="resultado-nombre">Pack Seguridad Básica</h2>
+        <p class="resultado-desc">Descripción del paquete recomendado.</p>
+        <span class="resultado-inversion">💰 Rango de inversión</span>
+      </div>
+      <div class="resultado-acciones">
+        <a href="#" class="btn-whatsapp btn-resultado-wa" target="_blank" rel="noopener">
+          💬 Hablar con Carlos sobre este paquete
+        </a>
+        <button class="btn-reiniciar" id="btn-reiniciar" type="button">
+          ↩ Volver a empezar
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 i-Homotic · Medellín, Colombia · <a href="contacto.html">Contacto</a></p>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
