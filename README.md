@@ -10,7 +10,7 @@ Este sitio fue diseñado para reducir la fricción del primer contacto, convirti
 
 ---
 
-## Las 4 herramientas
+## Las 5 herramientas
 
 ### 🧭 Quiz — "¿Por dónde empiezo?"
 **Insight de investigación #4: Pedagogía como diferencial**
@@ -43,28 +43,39 @@ Formulario con validación completa en cliente + POST a webhook de n8n. Estados:
 
 ---
 
+### 🏠 Casa Inteligente 3D
+**Insight: Visualizar antes de comprar**
+> "No entiendo dónde va qué."
+
+Visualizador Three.js (r128) con 5 habitaciones interactivas: Sala, Cocina, Habitación Principal, Entrada y Patio. Click en cada espacio para ver los dispositivos instalados, el estado actual y la escena activa. CTA de WhatsApp contextualizado por habitación. Animación de órbita introductoria, parpadeo de luces y hotspots flotantes. Sin frameworks, sin npm.
+
+---
+
 ## Estructura del proyecto
 
 ```
 i-homotic-interactivos/
-├── index.html            ← Landing con hero + 4 tarjetas
+├── index.html            ← Landing con hero + 5 tarjetas
 ├── quiz.html             ← Quiz ¿Por dónde empiezo?
 ├── calculadora.html      ← Calculadora de Ahorro
 ├── configurador.html     ← Configurador Modular
 ├── contacto.html         ← Formulario de Contacto
+├── casa3d.html           ← Visualizador 3D (Three.js)
 ├── css/
 │   ├── variables.css     ← Tokens de color y tipografía
 │   ├── global.css        ← Reset, base, navbar
 │   ├── quiz.css
 │   ├── calculadora.css
 │   ├── configurador.css
-│   └── contacto.css
+│   ├── contacto.css
+│   └── casa3d.css        ← Estilos del visualizador 3D
 ├── js/
 │   ├── navbar.js         ← Hamburger + active link
 │   ├── quiz.js
 │   ├── calculadora.js
 │   ├── configurador.js
-│   └── contacto.js
+│   ├── contacto.js
+│   └── casa3d.js         ← Three.js scene, hotspots, panel
 └── README.md
 ```
 
@@ -74,9 +85,10 @@ i-homotic-interactivos/
 
 - **HTML5** semántico
 - **CSS3** con variables custom (sin frameworks)
-- **JavaScript vanilla** ES6+ (sin librerías externas)
+- **JavaScript vanilla** ES6+ (sin librerías externas salvo Three.js)
 - **Fuente**: Sora (Google Fonts)
 - **Gráficas**: SVG generado dinámicamente por JS (sin canvas ni librería)
+- **3D**: Three.js r128 vía CDN + OrbitControls (sin npm, sin bundler)
 
 ---
 

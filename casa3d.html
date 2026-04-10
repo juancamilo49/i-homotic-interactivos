@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Inteligente 3D — i-Homotic</title>
+  <meta name="description" content="Explora visualmente cómo funciona la domótica en cada espacio de tu hogar. Visualizador 3D interactivo de i-Homotic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Three.js r128 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- OrbitControls -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/casa3d.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo">i-Homotic</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="quiz.html" class="nav-link">¿Por dónde empiezo?</a></li>
+      <li><a href="calculadora.html" class="nav-link">Calculadora</a></li>
+      <li><a href="configurador.html" class="nav-link">Configurador</a></li>
+      <li><a href="casa3d.html" class="nav-link">Casa 3D</a></li>
+      <li><a href="contacto.html" class="nav-link">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573XXXXXXXXXX?text=Hola,%20quiero%20información%20sobre%20domótica" class="nav-cta" target="_blank" rel="noopener">Hablar con Carlos</a>
+    <button class="nav-hamburger" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+  </nav>
+
+  <!-- OVERLAY ROTACIÓN MOBILE -->
+  <div id="rotate-overlay" class="rotate-overlay" role="dialog" aria-label="Rotar dispositivo">
+    <div class="rotate-content">
+      <div class="rotate-icon">📱</div>
+      <span class="rotate-arrow">↻</span>
+      <h2>Gira tu dispositivo</h2>
+      <p>Para una mejor experiencia del visualizador 3D</p>
+      <hr class="rotate-divider" />
+      <p class="rotate-note">O continúa en vertical (experiencia limitada)</p>
+      <button id="btn-continuar" class="btn-continuar">Continuar así</button>
+    </div>
+  </div>
+
+  <!-- LAYOUT PRINCIPAL -->
+  <main id="casa3d-main">
+
+    <!-- Canvas Three.js -->
+    <div id="canvas-container"></div>
+
+    <!-- Panel lateral -->
+    <aside id="info-panel" class="info-panel info-panel--hidden" aria-live="polite">
+      <div class="info-panel__header">
+        <span id="info-icono" class="info-icono"></span>
+        <h3 id="info-nombre"></h3>
+        <button id="info-close" class="info-close" aria-label="Cerrar panel">✕</button>
+      </div>
+      <div class="info-panel__body">
+        <p class="info-categoria">Dispositivos instalados</p>
+        <ul id="info-dispositivos" class="info-dispositivos"></ul>
+        <div class="info-estado">
+          <span class="info-label">Estado</span>
+          <span id="info-estado-val" class="info-badge">—</span>
+        </div>
+        <div class="info-escena">
+          <span class="info-label">Escena activa</span>
+          <span id="info-escena-val">—</span>
+        </div>
+      </div>
+      <div class="info-panel__footer">
+        <a id="info-cta" href="#" target="_blank" rel="noopener" class="btn-cta-whatsapp">
+          💬 Quiero esto en mi casa →
+        </a>
+      </div>
+    </aside>
+
+    <!-- Hint de controles -->
+    <div id="controls-hint" class="controls-hint" aria-hidden="true">
+      🖱 Arrastra para orbitar &nbsp;·&nbsp; 🔍 Scroll para zoom &nbsp;·&nbsp; Click en un espacio para explorar
+    </div>
+
+  </main>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/casa3d.js"></script>
+</body>
+</html>
